@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>特邀客户</title>
+    <script>
+        !new function(){var a=this;a.width=750,a.fontSize=100,a.widthProportion=function(){var b=(document.body&&document.body.clientWidth||document.getElementsByTagName("html")[0].offsetWidth)/a.width;return b>1?1:b},a.changePage=function(){document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+a.widthProportion()*a.fontSize+"px !important")},a.changePage(),window.addEventListener("resize",function(){a.changePage()},!1)};
+    </script>
+    <script src="jquery.js"></script>
+    <script src="layer.js"></script>
+</head>
+<style>
+    body,dl,dd,ul,ol,h1,h2,h3,h4,h5,h6,pre,form,input,textarea,p,hr,thead,tbody,tfoot,th,td{margin:0;padding:0;}
+    ul,ol{list-style:none;}
+    a{text-decoration:none;}
+    html{-ms-text-size-adjust:none;-webkit-text-size-adjust:none;text-size-adjust:none;}
+    body{line-height:1.5; font-size:14px;}
+    body,button,input,select,textarea{font-family:'helvetica neue',tahoma,'hiragino sans gb',stheiti,'wenquanyi micro hei',\5FAE\8F6F\96C5\9ED1,\5B8B\4F53,sans-serif;}
+    b,strong{font-weight:bold;}
+    i,em{font-style:normal;}
+    table{border-collapse:collapse;border-spacing:0;}
+    table th,table td{border:1px solid #ddd;padding:5px;}
+    table th{font-weight:inherit;border-bottom-width:2px;border-bottom-color:#ccc;}
+    img{border:0 none;width:auto\9;max-width:100%;vertical-align:top; height:auto;}
+    button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;vertical-align:baseline;}
+    button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;}
+    button[disabled],input[disabled]{cursor:default;}
+    input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;}
+    input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}
+    input[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}
+    input:focus{outline:none;}
+    select[size],select[multiple],select[size][multiple]{border:1px solid #AAA;padding:0;}
+    article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}
+    audio,canvas,video,progress{display:inline-block;}
+    body{background:#fff;}
+    input::-webkit-input-speech-button {display: none}
+    button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
+    body{background-image:url(kehu.png?v=2);background-repeat:no-repeat;background-size:cover}
+    .container{display:flex;justify-content:center;margin-top:40%}
+    .code{position: relative;width:6.4rem;height:6.76rem;background-image:url(ma.png);background-repeat:no-repeat;background-size:6.4rem 6.76rem;display:none}
+    .hei{height:2.6rem}
+    .input{height:2.7rem;text-align:center}
+    .input input{width:4rem;height:1.2rem;outline:0;border:1px solid #794a33;border-radius:.2rem;padding:2px;box-sizing:border-box;cursor:pointer;text-align:center;background:#fff8f1}
+    .button{text-align:center}
+    .gopng{position: absolute;top: 0;left: 0;width:100%;height:100%;opacity: 0.95;display:none;z-index:9}
+    .ioswrap{position: absolute;top: 0px;left: 7.5%;width: 6.4rem;height: 8.24rem;background-image:url(ios.png);background-repeat:no-repeat;background-size:6.4rem;margin:10% auto 0;display:none;z-index:3;}
+    .zhe{width:100vw;height:100vh;background:#000;opacity:0.5;position:absolute;top:0;left:0;display:none;z-index:2;}
+    .donwpng{position:absolute;margin:0 auto;width: 5.8rem;height: 1rem;margin-top:105%;z-index:1}
+    .gehei{width:100%;height:3rem;}
+    .input-code{width:80%;height:0.9rem;line-height:0.9rem;padding-left:5px;background:#ececec;margin:0 auto;border-radius: 25px;display:flex;flex-direction: row;}
+    .left{width:75%;overflow: hidden;}
+    .right{width:25%;text-align:center;background:#4abef9;border-radius: 0 25px 25px 0;color:#fff;}
+    #input{opacity:0}
+</style>
+<body>
+    <img src="go.png" class="gopng"/>
+    <div class="zhe"></div>
+    <div class="ioswrap">
+        <div class="gehei"></div>
+        <div class="input-code">
+            <div class="left"></div>
+            <div class="right">
+                复制
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="code">
+            <div class="hei"></div>
+            <div class="input">
+                <input type="text" name="code" class="codeinput" placeholder="请输入邀请验证码">
+            </div>
+            <div class="button">
+                <img src="determine.png" alt="确定" width="180">
+            </div>
+        </div>
+        <img src="donw.png" class="donwpng"/>
+    </div>
+    <input type="text" id="input" value="">
+    <script>
+    
+        function isIOS(){
+            var u = navigator.userAgent;
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+            return isiOS;
+        }
+    
+        $('.left').text(window.location.href);
+        (function(){
+            var ua = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                $('.gopng').show();
+            }else if(isIOS() && !(/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent))){
+                $('.zhe').show();
+                $('.ioswrap').show();
+            }
+            
+        })()
+        $('.donwpng').click(function () {
+            $('.code').fadeIn();
+        })
+        layer.ready(function() {
+            $('.right').click(function(){
+              var text = window.location.href;
+              var input = document.getElementById("input");
+              input.value = text; // 修改文本框的内容
+              input.select(); // 选中文本
+              document.execCommand("copy"); // 执行浏览器复制命令
+              layer.msg('复制成功！')
+             
+            })
+            
+     
+            $('.button').click(function () {
+                var code = $('.codeinput').val();
+                if(code==''){
+                    layer.msg('请输入邀请码！'); return;
+                }
+                setTimeout(function () {
+                    $('.code').fadeOut();
+                },500)
+                $('.codeinput').val('');
+                if(code=='55004'){
+                    if(isIOS()){
+                        window.location.href = 'app.mobileconfig';//ios加载mobileconfig描述文件需要https
+                    }else{
+                        window.location.href = 'http://1208.rglxc.top/gogo.apk';
+                    }
+                }else{
+                    layer.msg('无效的邀请码！');
+                    setTimeout(function () {
+                        window.location.reload();
+                    },3000)
+                }
+            })
+        })
+    </script>
+</body>
+</html>
