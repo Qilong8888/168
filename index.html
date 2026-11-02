@@ -1,123 +1,240 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-<meta http-equiv="pragma" content="no-cache"> 
-<meta http-equiv="Cache-Control" content="no-cache, must-revalidate"> 
-<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
-<title>正在跳转至广告商页面...</title>
-
-
-<link href="static/skin-2019.css" rel="stylesheet" type="text/css">
-<script src="static/jquery.min.js"></script>
-<script src="static/clipboard.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>制造业税务工作室 | 税务合规与资金合规进出</title>
+<style>
+  :root{
+    --navy:#0f2742; --blue:#1f5f8b; --gold:#c9a45c;
+    --bg:#f6f8fb; --text:#1c2a38; --muted:#5d6b7a; --line:#dfe6ee;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--text);background:var(--bg);line-height:1.7}
+  a{text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  .topbar{position:sticky;top:0;z-index:20;background:rgba(15,39,66,.96);color:#fff;backdrop-filter:blur(8px)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+  .brand{font-weight:700;letter-spacing:.5px;font-size:16px}
+  .brand span{color:var(--gold)}
+  .lang{display:flex;gap:8px}
+  .lang button{border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;padding:6px 12px;border-radius:999px;cursor:pointer;font-size:13px}
+  .lang button.active{background:var(--gold);border-color:var(--gold);color:#122033;font-weight:700}
+  .hero{background:linear-gradient(135deg,#0f2742 0%,#173f63 55%,#1f5f8b 100%);color:#fff;padding:72px 0 64px}
+  .tag{display:inline-block;border:1px solid rgba(201,164,92,.7);color:#f3dfb6;padding:6px 12px;border-radius:999px;font-size:13px;margin-bottom:18px}
+  h1{font-size:clamp(28px,4.2vw,46px);line-height:1.25;margin:0 0 18px;letter-spacing:.5px}
+  .hero p{max-width:760px;color:#dbe7f2;font-size:17px;margin:0 0 28px}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#122033;padding:14px 24px;border-radius:10px;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+  .cta:hover{filter:brightness(1.05)}
+  section{padding:64px 0}
+  .section-title{font-size:clamp(22px,3vw,32px);margin:0 0 10px;color:var(--navy)}
+  .section-sub{color:var(--muted);margin:0 0 32px;max-width:760px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:0 6px 20px rgba(15,39,66,.05)}
+  .card h3{margin:0 0 10px;font-size:18px;color:var(--navy)}
+  .card p{margin:0;color:var(--muted);font-size:15px}
+  .num{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:8px;background:#eef4fa;color:var(--blue);font-weight:700;margin-bottom:12px}
+  .services .grid{grid-template-columns:repeat(3,1fr)}
+  .trust{background:#fff}
+  .trust-list{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+  .trust-item{border-left:3px solid var(--gold);padding:4px 0 4px 16px}
+  .trust-item strong{display:block;color:var(--navy);margin-bottom:4px}
+  .trust-item span{color:var(--muted);font-size:14px}
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+  .step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+  .step b{display:block;color:var(--blue);margin-bottom:6px}
+  .step span{font-size:14px;color:var(--muted)}
+  .final{background:linear-gradient(135deg,#122033,#1f5f8b);color:#fff;text-align:center}
+  .final h2{font-size:clamp(24px,3.4vw,36px);margin:0 0 12px}
+  .final p{color:#dbe7f2;max-width:720px;margin:0 auto 26px}
+  .final .cta{background:#25d366;color:#072012}
+  footer{background:#0b1a2a;color:#9fb1c4;padding:28px 0;font-size:13px}
+  .float-wa{position:fixed;right:20px;bottom:20px;z-index:50;width:58px;height:58px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  .float-wa svg{width:30px;height:30px;fill:#fff}
+  @media(max-width:900px){
+    .services .grid,.trust-list,.flow{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:640px){
+    .hero{padding:52px 0}
+    .grid,.services .grid,.trust-list,.flow{grid-template-columns:1fr}
+    .topbar .wrap{height:58px}
+    .brand{font-size:14px}
+  }
+</style>
 </head>
-<body class="w768">
-<div class="img_bg"></div>
-<div class="load">
-	<div class="load_txt">正在跳转至广告商页面</div>
-	<div class="load_bg"></div>
-	<div class="loading"></div>
-	<div class="load_number">10</div>
-</div>
-<section class="txts none">
-<div class="box">
-	<div class="fl">
-		<img src="static/logo.png">
-	</div>
-	<div class="fr">
-		<p>抱歉，不支持应用内浏览</p>
-		<p>请右上角选择<i id="ico"></i>中打开</p>
-	</div>
-</div>
-<div class="arrow"></div>
-</section>
-<div class="clearfix"></div>
-<section class="notfoud w768 none">
-<div class="Twave"></div>
-<div class="clearfix"></div>
-<div class="tisp">复制网址到浏览器地址栏打开</div>
-<div class="input">
-	<input id="CopyURL" value="https://138.sg168.xyz" readonly="readonly">
-</div>
-<div>
-	<a id="btnCopy" data-clipboard-target="#CopyURL">一键复制</a>
-</div>
-<div class="clearfix"></div>
-<div class="tisp">
-	<p class="t2">请收藏本页面，方便下次浏览</p>
-</div>
-<div class="clearfix"></div>
-<div class="Bwave"></div>
-</section>
-<script type="text/javascript">
+<body>
 
-function GetQueryString(name){
-     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-     var r = window.location.search.substr(1).match(reg);
-     if(r!=null)return  unescape(r[2]); return null;
-}
-var myurl=GetQueryString("f");
-if(myurl !=null && myurl.toString().length>1){
-  var tg='?f='+GetQueryString("f");
-} else {
-var tg='';
-}
-$(function(){
- $("#CopyURL").val('https://138.sg168.xyz'+tg);
-	var clipboard = new Clipboard('#btnCopy');
-	clipboard.on('success', function(e) {   
-		setTimeout(function() {
-			alert('复制成功,快去浏览器中粘贴访问吧!')
-		}, 200)
-	});
-	 clipboard.on('error', function(e) {
-		setTimeout(function() {
-			prompt("复制失败了,请长按全选输入框复制吧~", 'https://138.sg168.xyz'+tg)
-		}, 200)
-	});
-});	
-function loading() {
-	var num = 0;
-	var kg = true;
-	setInterval(function() {
-		if (kg) {
-			if (num == 100) {
-				window.location.href = 'https://138.sg168.xyz' + tg;
-				kg = false;
-				return false;
-			}
-			$('.load_number').html(num);
-			num++;
-		}
-	}, 30)
-	$('.loading').css('width', '100%')
-};
-$(function(){
-	var u = navigator.userAgent;
-	var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
-	if (isAndroid) {
-		$("#ico").addClass("and")
-	} else {
-		$("#ico").addClass("ios")
-	}
-	var ua = navigator.userAgent.toLowerCase();
-    if(ua.indexOf(' qq')>-1 && ua.indexOf('mqqbrowser') <0){
-	   $('.none').css({'opacity':'1'});
-	   $('.img_bg,.load').hide();
-	    return;
-	} else if (ua.match(/MicroMessenger/i) == 'micromessenger') {
-	    $('.none').css({'opacity':'1'});
-		$('.img_bg,.load').hide();
-        return;
-    } else {	
-		loading();
-		return false
-	}
-});
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">制造业税务工作室 <span>| 税务师事务所</span></div>
+    <div class="lang">
+      <button id="btn-s" class="active" onclick="setLang('s')">简体</button>
+      <button id="btn-t" onclick="setLang('t')">繁體</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="tag" data-s="税务师事务所 · 制造业专项" data-t="稅務師事務所 · 製造業專項">税务师事务所 · 制造业专项</div>
+    <h1 data-s="制造企业的利润，不该耗在税与资金的困局里"
+        data-t="製造企業的利潤，不該耗在稅與資金的困局裡">制造企业的利润，不该耗在税与资金的困局里</h1>
+    <p data-s="从工厂账本到跨境架构，我们帮您在合法合规前提下理清税务风险、优化税负，并评估资金合规进出路径。专业税务顾问、税务合规计划、涉税鉴证，一站式落地。"
+       data-t="從工廠帳本到跨境架構，我們幫您在合法合規前提下釐清稅務風險、優化稅負，並評估資金合規進出路徑。專業稅務顧問、稅務合規計劃、涉稅鑑證，一站式落地。">
+      从工厂账本到跨境架构，我们帮您在合法合规前提下理清税务风险、优化税负，并评估资金合规进出路径。专业税务顾问、税务合规计划、涉税鉴证，一站式落地。
+    </p>
+    <a class="cta" href="https://wa.me/85200000000?text=%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%98%AF%E5%88%B6%E9%80%A0%E4%BC%81%E4%B8%9A%EF%BC%8C%E6%83%B3%E5%92%A8%E8%AF%A2%E7%A8%8E%E5%8A%A1%E4%B8%8E%E8%B5%84%E9%87%91%E5%90%88%E8%A7%84%E9%97%AE%E9%A2%98" target="_blank" rel="noopener">
+      <span data-s="WhatsApp 即时咨询 →" data-t="WhatsApp 即時諮詢 →">WhatsApp 即时咨询 →</span>
+    </a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title" data-s="制造企业常见的四个卡点" data-t="製造企業常見的四個卡點">制造企业常见的四个卡点</h2>
+    <p class="section-sub" data-s="问题往往不是单一税种，而是业务、单据、架构与资金路径没有形成闭环。"
+       data-t="問題往往不是單一稅種，而是業務、單據、架構與資金路徑沒有形成閉環。">问题往往不是单一税种，而是业务、单据、架构与资金路径没有形成闭环。</p>
+    <div class="grid">
+      <div class="card">
+        <div class="num">01</div>
+        <h3 data-s="研发费用归集不清，加计扣除反成风险" data-t="研發費用歸集不清，加計扣除反成風險">研发费用归集不清，加计扣除反成风险</h3>
+        <p data-s="研发项目多、料工费分摊复杂，归集口径与备查资料不完整，核查时可能面临补税与滞纳金。"
+           data-t="研發項目多、料工費分攤複雜，歸集口徑與備查資料不完整，核查時可能面臨補稅與滯納金。">研发项目多、料工费分摊复杂，归集口径与备查资料不完整，核查时可能面临补税与滞纳金。</p>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3 data-s="内外销并行，退税与单证匹配不上" data-t="內外銷並行，退稅與單證匹配不上">内外销并行，退税与单证匹配不上</h3>
+        <p data-s="进项税额划分、出口单证与报关信息错配，可能拉长退税周期，影响现金流。"
+           data-t="進項稅額劃分、出口單證與報關信息錯配，可能拉長退稅週期，影響現金流。">进项税额划分、出口单证与报关信息错配，可能拉长退税周期，影响现金流。</p>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3 data-s="境外利润回流路径不清，不敢回也不会回" data-t="境外利潤回流路徑不清，不敢回也不會回">境外利润回流路径不清，不敢回也不会回</h3>
+        <p data-s="香港公司利润累积，但离岸豁免适用性、合同与单据闭环、利润分配路径需要逐项评估，不宜简单零申报。"
+           data-t="香港公司利潤累積，但離岸豁免適用性、合同與單據閉環、利潤分配路徑需要逐項評估，不宜簡單零申報。">香港公司利润累积，但离岸豁免适用性、合同与单据闭环、利润分配路径需要逐项评估，不宜简单零申报。</p>
+      </div>
+      <div class="card">
+        <div class="num">04</div>
+        <h3 data-s="想出海投资，ODI 备案与资金出境卡住" data-t="想出海投資，ODI 備案與資金出境卡住">想出海投资，ODI 备案与资金出境卡住</h3>
+        <p data-s="境外投资备案需关注资金来源穿透、审批路径与投后登记，材料不闭环容易影响出海窗口期。"
+           data-t="境外投資備案需關注資金來源穿透、審批路徑與投後登記，材料不閉環容易影響出海窗口期。">境外投资备案需关注资金来源穿透、审批路径与投后登记，材料不闭环容易影响出海窗口期。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" style="background:#fff">
+  <div class="wrap">
+    <h2 class="section-title" data-s="我们具体做什么" data-t="我們具體做什麼">我们具体做什么</h2>
+    <p class="section-sub" data-s="以“可落地、可举证、可过核查”为标准，不做纸上谈兵的报告。"
+       data-t="以「可落地、可舉證、可過核查」為標準，不做紙上談兵的報告。">以“可落地、可举证、可过核查”为标准，不做纸上谈兵的报告。</p>
+    <div class="grid">
+      <div class="card">
+        <h3 data-s="① 制造企业税务合规与优化" data-t="① 製造企業稅務合規與優化">① 制造企业税务合规与优化</h3>
+        <p data-s="围绕发票品目一致性、研发费用归集、税种申报口径差异等高频核查点，做前置自查与合规方案设计。"
+           data-t="圍繞發票品目一致性、研發費用歸集、稅種申報口徑差異等高頻核查點，做前置自查與合規方案設計。">围绕发票品目一致性、研发费用归集、税种申报口径差异等高频核查点，做前置自查与合规方案设计。</p>
+      </div>
+      <div class="card">
+        <h3 data-s="② 跨境架构与利润回流合规评估" data-t="② 跨境架構與利潤回流合規評估">② 跨境架构与利润回流合规评估</h3>
+        <p data-s="结合出海阶段评估直接持股、中间控股或多层架构的适用性，重点评估利润合规回流路径与税负影响。"
+           data-t="結合出海階段評估直接持股、中間控股或多層架構的適用性，重點評估利潤合規回流路徑與稅負影響。">结合出海阶段评估直接持股、中间控股或多层架构的适用性，重点评估利润合规回流路径与税负影响。</p>
+      </div>
+      <div class="card">
+        <h3 data-s="③ 香港离岸豁免合规申请与抗辩" data-t="③ 香港離岸豁免合規申請與抗辯">③ 香港离岸豁免合规申请与抗辩</h3>
+        <p data-s="协助梳理业务链路、补齐单据闭环、逐条答复税局问询，评估离岸豁免适用性，避免违规零申报风险。"
+           data-t="協助梳理業務鏈路、補齊單據閉環、逐條答覆稅局問詢，評估離岸豁免適用性，避免違規零申報風險。">协助梳理业务链路、补齐单据闭环、逐条答复税局问询，评估离岸豁免适用性，避免违规零申报风险。</p>
+      </div>
+      <div class="card">
+        <h3 data-s="④ ODI 境外投资备案全流程支持" data-t="④ ODI 境外投資備案全流程支持">④ ODI 境外投资备案全流程支持</h3>
+        <p data-s="从资金来源穿透核查材料准备，到发改备案/商务审批路径匹配，再到投后存量权益登记。"
+           data-t="從資金來源穿透核查材料準備，到發改備案/商務審批路徑匹配，再到投後存量權益登記。">从资金来源穿透核查材料准备，到发改备案/商务审批路径匹配，再到投后存量权益登记。</p>
+      </div>
+      <div class="card">
+        <h3 data-s="⑤ 香港银行开户辅导" data-t="⑤ 香港銀行開戶輔導">⑤ 香港银行开户辅导</h3>
+        <p data-s="根据业务实质匹配开户方案，辅导用途说明与文件准备，减少反复被拒的时间成本。"
+           data-t="根據業務實質匹配開戶方案，輔導用途說明與文件準備，減少反覆被拒的時間成本。">根据业务实质匹配开户方案，辅导用途说明与文件准备，减少反复被拒的时间成本。</p>
+      </div>
+      <div class="card">
+        <h3 data-s="⑥ 专业税务顾问与涉税鉴证" data-t="⑥ 專業稅務顧問與涉稅鑑證">⑥ 专业税务顾问与涉税鉴证</h3>
+        <p data-s="由税务师出具专业税务顾问、税务合规计划、涉税鉴证等文书，按执业规范承担相应责任。"
+           data-t="由稅務師出具專業稅務顧問、稅務合規計劃、涉稅鑑證等文書，按執業規範承擔相應責任。">由税务师出具专业税务顾问、税务合规计划、涉税鉴证等文书，按执业规范承担相应责任。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <h2 class="section-title" data-s="为什么选择税务师事务所" data-t="為什麼選擇稅務師事務所">为什么选择税务师事务所</h2>
+    <div class="trust-list">
+      <div class="trust-item">
+        <strong data-s="法定资质" data-t="法定資質">法定资质</strong>
+        <span data-s="可开展专业税务顾问、税务合规计划、涉税鉴证、纳税情况审查等特定业务。" data-t="可開展專業稅務顧問、稅務合規計劃、涉稅鑑證、納稅情況審查等特定業務。">可开展专业税务顾问、税务合规计划、涉税鉴证、纳税情况审查等特定业务。</span>
+      </div>
+      <div class="trust-item">
+        <strong data-s="制造业纵深" data-t="製造業縱深">制造业纵深</strong>
+        <span data-s="懂车间成本、出口单证、设备折旧与研发台账，不只做泛泛财税代理。" data-t="懂車間成本、出口單證、設備折舊與研發台帳，不只做泛泛財稅代理。">懂车间成本、出口单证、设备折旧与研发台账，不只做泛泛财税代理。</span>
+      </div>
+      <div class="trust-item">
+        <strong data-s="结果导向" data-t="結果導向">结果导向</strong>
+        <span data-s="方案以可落地、可举证、可过核查为标准，强调合规边界与执行闭环。" data-t="方案以可落地、可舉證、可過核查為標準，強調合規邊界與執行閉環。">方案以可落地、可举证、可过核查为标准，强调合规边界与执行闭环。</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title" data-s="合作流程" data-t="合作流程">合作流程</h2>
+    <div class="flow">
+      <div class="step"><b data-s="01 初步沟通" data-t="01 初步溝通">01 初步沟通</b><span data-s="了解业务模式、股权架构与当前卡点。" data-t="了解業務模式、股權架構與當前卡點。">了解业务模式、股权架构与当前卡点。</span></div>
+      <div class="step"><b data-s="02 风险诊断" data-t="02 風險診斷">02 风险诊断</b><span data-s="梳理税务、单据、资金路径与备案条件。" data-t="梳理稅務、單據、資金路徑與備案條件。">梳理税务、单据、资金路径与备案条件。</span></div>
+      <div class="step"><b data-s="03 方案设计" data-t="03 方案設計">03 方案设计</b><span data-s="给出合规优化、架构与执行路径建议。" data-t="給出合規優化、架構與執行路徑建議。">给出合规优化、架构与执行路径建议。</span></div>
+      <div class="step"><b data-s="04 落地支持" data-t="04 落地支持">04 落地支持</b><span data-s="文书出具、沟通答复与后续跟进。" data-t="文書出具、溝通答覆與後續跟進。">文书出具、沟通答复与后续跟进。</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2 data-s="您的工厂，税与钱的问题，值得一次专业对话" data-t="您的工廠，稅與錢的問題，值得一次專業對話">您的工厂，税与钱的问题，值得一次专业对话</h2>
+    <p data-s="告诉我们您的业务模式与卡点，我们判断是否存在合规优化空间。初步沟通不收费。"
+       data-t="告訴我們您的業務模式與卡點，我們判斷是否存在合規優化空間。初步溝通不收費。">告诉我们您的业务模式与卡点，我们判断是否存在合规优化空间。初步沟通不收费。</p>
+    <a class="cta" href="https://wa.me/8613235970001?text=%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%98%AF%E5%88%B6%E9%80%A0%E4%BC%81%E4%B8%9A%EF%BC%8C%E6%83%B3%E5%92%A8%E8%AF%A2%E7%A8%8E%E5%8A%A1%E4%B8%8E%E8%B5%84%E9%87%91%E5%90%88%E8%A7%84%E9%97%AE%E9%A2%98" target="_blank" rel="noopener">
+      <span data-s="WhatsApp 直接对话" data-t="WhatsApp 直接對話">WhatsApp 直接对话</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div data-s="© 2026 制造业税务工作室 · 税务师事务所。本页面内容为一般信息，不构成正式税务意见，具体事项需结合资料另行评估。"
+         data-t="© 2026 製造業稅務工作室 · 稅務師事務所。本頁面內容為一般資訊，不構成正式稅務意見，具體事項需結合資料另行評估。">
+      © 2026 制造业税务工作室 · 税务师事务所。本页面内容为一般信息，不构成正式税务意见，具体事项需结合资料另行评估。
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/85200000000?text=%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%98%AF%E5%88%B6%E9%80%A0%E4%BC%81%E4%B8%9A%EF%BC%8C%E6%83%B3%E5%92%A8%E8%AF%A2%E7%A8%8E%E5%8A%A1%E4%B8%8E%E8%B5%84%E9%87%91%E5%90%88%E8%A7%84%E9%97%AE%E9%A2%98" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.5 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.6 1.4h.1C24.6 28.8 30 23.4 30 16.8 30 10.2 24.6 3 16 3zm0 22.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.9.9 1-4.8-.3-.4c-1-1.6-1.5-3.4-1.5-5.3C4.9 9.3 9.9 5 16 5c6.1 0 11.1 4.3 11.1 11.8 0 6.5-5 8.8-11.1 8.8zm6.1-8.6c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.4 3.3c.2.2 2.4 3.7 5.8 5.2.8.3 1.4.5 1.9.6.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.3.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<script>
+  function setLang(lang){
+    document.documentElement.lang = lang === 's' ? 'zh-CN' : 'zh-Hant';
+    document.querySelectorAll('[data-s][data-t]').forEach(el=>{
+      el.textContent = el.dataset[lang];
+    });
+    document.getElementById('btn-s').classList.toggle('active', lang==='s');
+    document.getElementById('btn-t').classList.toggle('active', lang==='t');
+    try{ localStorage.setItem('tax_lang', lang); }catch(e){}
+  }
+  (function(){
+    let saved='s';
+    try{ saved=localStorage.getItem('tax_lang')||'s'; }catch(e){}
+    if(saved==='t') setLang('t');
+  })();
 </script>
-<div style="display:none"></div>
+
 </body>
 </html>
